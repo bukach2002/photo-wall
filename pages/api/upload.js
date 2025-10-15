@@ -98,11 +98,11 @@ export default async function handler(req, res) {
         createdAt: Date.now(),
       };
       saved.push(item);
-      existing.unshift(item);
+      existing.push(item);
     }
 
     // keep reasonable limit
-    const merged = existing.slice(0, 1000);
+    const merged = existing.slice(0, 10000);
     writeJSON(photosJson, merged);
 
     // notify any SSE clients that new photos are available

@@ -57,6 +57,7 @@ function broadcast(data) {
       }
       // always send JSON data
       const ok2 = res.write(`data: ${JSON.stringify(data)}\n\n`);
+      res.flush();
       try { console.log('[sse] wrote data line, return=', ok2); } catch (e) {}
     } catch (e) {
       // remove and close on error
