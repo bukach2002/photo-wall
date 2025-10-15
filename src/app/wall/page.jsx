@@ -240,7 +240,7 @@ export default function PhotoWallPage() {
             </div>
           </div>
         </div>
-        <div className="mb-4 flex items-center gap-3">
+        <div className="mb-4 flex items-center gap-3 hidden">
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" checked={autoScroll} onChange={(e) => setAutoScroll(e.target.checked)} />
             Auto-scroll
@@ -341,9 +341,9 @@ export default function PhotoWallPage() {
             ))}
           </div>
         )}
-        <div ref={sentinelRef} className="mt-6 flex items-center justify-center">
+        {/* <div ref={sentinelRef} className="mt-6 flex items-center justify-center">
           {loadingMore ? <div className="text-sm text-gray-600">Loading more…</div> : visibleCount < photos.length ? <div className="text-sm text-gray-600">Scroll to load more</div> : <div className="text-sm text-gray-600">End of photos</div>}
-        </div>
+        </div> */}
         {photos.length > 1000 && (
           <div className="mt-2 text-xs text-red-600">Warning: very large photo collections may need virtualization. Consider using react-window or similar for best performance.</div>
         )}
